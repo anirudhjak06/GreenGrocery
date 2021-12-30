@@ -20,11 +20,10 @@ updating these products on the website.
 - Users can then select their required products and the respective quantity of each product and add them to the cart. After adding to the cart, the user can checkout and fill in the shipping details, and enter payment details.
 - After a successful transaction, the user will get an order confirmation and a tracking link. Users can resolve their queries in the Contact Us section.
 
-For more details about the project please refer [Green Grocery Documentation](Green Grocery Documentation.pdf)
+For more details about the project please refer to **"Green Grocery Documentation.pdf"** and **"Green Grocery PPT.pdf"**
 
- [Green](Green Grocery Documentation.pdf) 
 
-And also our presentation and website demo youtube link: https://youtu.be/1cBzuk6oSCI
+The presentation and website demo of our project is available at this youtube link: https://youtu.be/1cBzuk6oSCI
 
 
 
