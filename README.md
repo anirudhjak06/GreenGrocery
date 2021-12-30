@@ -46,6 +46,12 @@ The another terminal will run http://localhost:5000/ for the backend part.
 
 The presentation and website demo of our project is available at this youtube link: https://youtu.be/1cBzuk6oSCI
 
+Some text with [a link][1] and
+another [link][2].
+
+[1]: http://example.com/ "Title"
+[2]: http://example.org/ "Title"
+
 ## Group Members
 
 <pre>
