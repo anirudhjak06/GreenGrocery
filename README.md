@@ -22,6 +22,25 @@ updating these products on the website.
 
 For more details about the project please refer to **"Green Grocery Documentation.pdf"** and **"Green Grocery PPT.pdf"**
 
+## Get Started
+★ Download git from the link:
+https://git-scm.com/downloads
+★ Download node and npm from link
+https://nodejs.org/en/
+★ After that in the terminal type “pip install npm”.
+★ Open the command prompt and run the command: git
+clone https://github.com/fsd30/Green-Grocery.git
+★ Change directory to Client Folder and type “yarn” in
+the command line and in another terminal change
+directory to API Folder and type “yarn” to install all the
+required dependencies.
+★ Finally to run the servers, use the following command
+in both the terminals: yarn start
+★ Then the terminal will prompt to open a URL or else
+type http://localhost:3000/for the frontend part and
+8
+another terminal will run http://localhost:5000/ for the
+backend part
 
 The presentation and website demo of our project is available at this youtube link: https://youtu.be/1cBzuk6oSCI
 
