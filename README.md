@@ -34,15 +34,15 @@ https://nodejs.org/en/.
 ★ Open the command prompt and run the command: 
 git clone https://github.com/anirudhjak06/GreenGrocery
 
-★ Change the directory to client Folder and type “yarn” in the command line .
+★ Change the directory to client Folder and type “yarn” in the command line.
 Then, in another terminal cd to api Folder and type “yarn” to install all the required dependencies.
 
 ★ Finally to run the servers, use the following command
 in both the terminals: yarn start
 
 ★ Then the terminal will prompt to open a URL or else
-type http://localhost:3000/ for the frontend part and 
-another terminal will run http://localhost:5000/ for the backend part.
+type http://localhost:3000/ for the frontend part. 
+The another terminal will run http://localhost:5000/ for the backend part.
 
 The presentation and website demo of our project is available at this youtube link: https://youtu.be/1cBzuk6oSCI
 
