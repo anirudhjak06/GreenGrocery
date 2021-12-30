@@ -20,7 +20,11 @@ updating these products on the website.
 - Users can then select their required products and the respective quantity of each product and add them to the cart. After adding to the cart, the user can checkout and fill in the shipping details, and enter payment details.
 - After a successful transaction, the user will get an order confirmation and a tracking link. Users can resolve their queries in the Contact Us section.
 
-For more details about the project please refer to **"Green Grocery Documentation.pdf"** and **"Green Grocery PPT.pdf"**
+For more details about the project please refer to [**"Green Grocery Documentation.pdf"**][1] and [**"Green Grocery PPT.pdf"**][2]
+
+[1]: https://github.com/anirudhjak06/GreenGrocery/blob/main/Green%20Grocery%20Documentation.pdf "Title"
+[2]: https://github.com/anirudhjak06/GreenGrocery/blob/main/Green%20Grocery%20PPT.pdf "Title"
+
 
 ## Get Started
 ★ Download git from the link:
@@ -45,12 +49,6 @@ type http://localhost:3000/ for the frontend part.
 The another terminal will run http://localhost:5000/ for the backend part.
 
 The presentation and website demo of our project is available at this youtube link: https://youtu.be/1cBzuk6oSCI
-
-Some text with [a link][1] and
-another [link][2].
-
-[1]: http://example.com/ "Title"
-[2]: http://example.org/ "Title"
 
 ## Group Members
 
