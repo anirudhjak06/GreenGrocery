@@ -69,7 +69,6 @@ const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
   border-radius: 1.5%;
-
 `;
 
 const Title = styled.h1`
@@ -84,10 +83,23 @@ const Desc = styled.p`
 `;
 
 const Button = styled.button`
-  padding: 10px;
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
+
+    padding: 10px;
+    color:white;
+    cursor: pointer;
+    font-weight: 600;
+    border-style: solid;
+    border-color: coral;
+  border-width: 2px;
+    border-radius: 5%;
+    transition: all 0.5s ease;
+  &:hover {
+    background-color: coral;
+    transform: scale(1.1);
+  }
 `;
 
 const Slider = () => {

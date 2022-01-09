@@ -1,10 +1,13 @@
 import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import { ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { lgout } from "../redux/apiCalls";
+import { useDispatch } from "react-redux";
+
 
 const Container = styled.div`
   height: 60px;
@@ -33,18 +36,18 @@ const Language = styled.span`
   ${mobile({ display: "none" })}
 `;
 
-const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px;
-`;
+// const SearchContainer = styled.div`
+//   border: 0.5px solid lightgray;
+//   display: flex;
+//   align-items: center;
+//   margin-left: 25px;
+//   padding: 5px;
+// `;
 
-const Input = styled.input`
-  border: none;
-  ${mobile({ width: "50px" })}
-`;
+// const Input = styled.input`
+//   border: none;
+//   ${mobile({ width: "50px" })}
+// `;
 
 const Center = styled.div`
   flex: 1;
@@ -66,45 +69,95 @@ const Right = styled.div`
 
 const MenuItem = styled.div`
   text-decoration: underline;
-  font-size: 14px;
+  font-size: 17px;
   cursor: pointer;
   margin-left: 25px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
+
 const Navbar = () => {
-  const quantity = useSelector(state=>state.cart.quantity)
-  return (
-    <Container>
-      <Wrapper>
-        <Left>
-          <Language><Link to={`/`}><img src="../favicon.ico" width="45" height="35"></img></Link></Language>
-          <SearchContainer>
-            <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
-        </Left>
-        <Center>
-          <Logo><Link to={`/`} style={{ textDecoration: 'none', color: 'black' }}>Green Grocery</Link></Logo>
-        </Center>
-        <Right>
-          <Link to="/register" style={{ textDecoration: 'none', color: 'black' }}>
-            <MenuItem style={{ textDecoration: 'none', color: 'black' }}>REGISTER </MenuItem>
-          </Link>
-          <Link to="/login" style={{ textDecoration: 'none', color: 'black' }}>
-            <MenuItem style={{ textDecoration: 'none', color: 'black' }}>SIGN IN</MenuItem>
-          </Link>
-          <Link to="/cart">
-            <MenuItem>
-              <Badge badgeContent={quantity} color="primary">
-                <ShoppingCartOutlined />
-              </Badge>
-            </MenuItem>
-          </Link>
-        </Right>
-      </Wrapper>
-    </Container>
-  );
+  const quantity = useSelector(state=>state.cart.quantity);
+  const user = useSelector((state) => state.user.currentUser);
+  const dispatch = useDispatch();
+  
+  const handleClick = () => {
+    lgout(dispatch);
+  };
+  
+  if (!user){ 
+    return (
+      <Container>
+        <Wrapper>
+          <Left>
+            <Language><Link to={`/`}><img src="../favicon.ico" width="45" height="35" alt=""></img></Link></Language>
+            
+            {/* <SearchContainer>
+              <Input placeholder="Search" />
+              <Search style={{ color: "gray", fontSize: 16 }} />
+            </SearchContainer> */}
+          </Left>
+          <Center>
+            <Logo><Link to={`/`} style={{ textDecoration: 'none', color: 'black' }}>Green Grocery</Link></Logo>
+          </Center>
+          <Right>
+          <Link to="/shop" style={{ textDecoration: 'none', color: 'black' }}>
+              <MenuItem style={{ textDecoration: 'none', color: 'black' }}>SHOP</MenuItem>
+            </Link>
+            <Link to="/register" style={{ textDecoration: 'none', color: 'black' }}>
+              <MenuItem style={{ textDecoration: 'none', color: 'black' }}>REGISTER </MenuItem>
+            </Link>
+            <Link to="/login" style={{ textDecoration: 'none', color: 'black' }}>
+              <MenuItem style={{ textDecoration: 'none', color: 'black' }}>SIGN IN</MenuItem>
+            </Link>
+            <Link to="/login">
+              <MenuItem>
+                <Badge badgeContent={quantity} color="primary">
+                  <ShoppingCartOutlined />
+                </Badge>
+              </MenuItem>
+            </Link>
+          </Right>
+        </Wrapper>
+      </Container>
+    );
+  }
+  else{
+    return (
+      <Container>
+        <Wrapper>
+          <Left>
+            <Language><Link to={`/`}><img src="../favicon.ico" width="45" height="35" alt=""></img></Link></Language>
+            {/* <SearchContainer>
+              <Input placeholder="Search" />
+              <Search style={{ color: "gray", fontSize: 16 }} />
+            </SearchContainer> */}
+          </Left>
+          <Center>
+            <Logo><Link to={`/`} style={{ textDecoration: 'none', color: 'black' }}>Green Grocery</Link></Logo>
+          </Center>
+          <Right>
+          <Link to="/shop" style={{ textDecoration: 'none', color: 'black' }}>
+              <MenuItem style={{ textDecoration: 'none', color: 'black' }}>SHOP</MenuItem>
+            </Link>
+          <Link to={"/user/"+user._id} style={{ textDecoration: 'none', color: 'black' }}>
+              <MenuItem style={{ textDecoration: 'none', color: 'black'}}>Hello, {user.username.toUpperCase()} </MenuItem>
+            </Link>
+            <Link to="/" onClick={handleClick} style={{ textDecoration: 'none', color: 'black' }}>
+              <MenuItem style={{ textDecoration: 'none', color: 'black' }}><b>Logout</b></MenuItem>
+            </Link>
+            <Link to="/cart">
+              <MenuItem>
+                <Badge badgeContent={quantity} color="primary">
+                  <ShoppingCartOutlined />
+                </Badge>
+              </MenuItem>
+            </Link>
+          </Right>
+        </Wrapper>
+      </Container>
+    );
+  }
 };
 
 export default Navbar;

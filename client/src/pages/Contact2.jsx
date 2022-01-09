@@ -27,8 +27,9 @@ const Contact = () => {
       body: JSON.stringify(details),
     });
     setStatus("Submit");
+    // eslint-disable-next-line
     let result = await response.json();
-    alert("Successfully Sent! We will reach you as fast as we can!!");
+    alert("Successfully Sent! We will reach you as fast as we can!!"); 
 
     // let result = await response.json();
     // alert();

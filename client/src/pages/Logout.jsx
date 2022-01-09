@@ -1,8 +1,7 @@
-import { useState } from "react";
 import styled from "styled-components";
-import { login } from "../redux/apiCalls";
+import { lgout } from "../redux/apiCalls";
 import { mobile } from "../responsive";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -20,9 +19,9 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  border-radius: 2.5%;
+  border-radius: 1.5%;
   width: 40%;
-  height: 45%;
+  height: 19%;
   padding: 20px;
   background-color: white;
   align-items: center;
@@ -35,28 +34,19 @@ const Title = styled.h1`
   align-items: center;
 `;
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+// const Form = styled.form`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// `;
 
-const Input = styled.input`
-  flex: 1;
-  min-width: 60%;
-  margin: 10px 0;
-  font-size: 20px;
-  padding: 10px;
-  border-style: solid;
-    border-color: black;
-  border-width: 2px;
-    border-radius: 4.5%;
-    transition: all 0.5s ease;
-  &:hover {
-    background-color: transparent;
-    transform: scale(1.1);
-  }
-`;
+// const Input = styled.input`
+//   flex: 1;
+//   min-width: 60%;
+//   margin: 10px 0;
+//   font-size: 20px;
+//   padding: 10px;
+// `;
 
 const Button = styled.button`
   width: 50%;
@@ -75,49 +65,24 @@ const Button = styled.button`
   }
 `;
 
-const Button2 = styled.button`
-  width: 40%;
-  font-size: 14px;
-  border: none;
-  padding: 15px 15px;
-  background-color: green;
-  color: white;
-  cursor: pointer;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  &:disabled {
-    color: green;
-    cursor: not-allowed;
-  }
-`;
 
-const Lik = styled.a`
-  margin: 5px 0px;
-  font-size: 12px;
-  text-decoration: underline;
-  cursor: pointer;
-`;
-
-const Error = styled.span`
-  color: red;
-`;
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const { isFetching, error } = useSelector((state) => state.user);
+  // const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
     e.preventDefault();
-    login(dispatch, { username, password });
+    lgout(dispatch);
+    // login(dispatch, { username, password });
   };
   return (
     <Container>
       <Wrapper>
-        <Title><center>SIGN IN</center></Title>
-        <Form>
+        <Title><center>Are you sure you want to logout?</center></Title>
+        {/* <Form>
           <Input
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
@@ -126,14 +91,16 @@ const Login = () => {
             placeholder="Password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
-          />
-          <Button onClick={handleClick} disabled={isFetching}>
-            LOGIN
+          />*/}
+          <center>
+          <Button onClick={handleClick}>
+          <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Logout</Link>
           </Button>
-          {error && <Error>Something went wrong...</Error>}
+          </center>
+          {/*{error && <Error>Something went wrong...</Error>}
           <Lik>DO NOT YOU REMEMBER THE PASSWORD?</Lik>
           <Button2><Link to="/register" style={{ textDecoration: 'none', color: 'white' }}>CREATE A NEW ACCOUNT</Link></Button2>
-        </Form>
+        </Form> */}
       </Wrapper>
     </Container>
   );

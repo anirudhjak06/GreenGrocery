@@ -3,7 +3,7 @@ export const sliderItems = [
       id: 1,
       img: "https://coolwallpapers.me/picsup/5465402-vegetables-wallpapers.jpg",
       title: "Vegetable Products Discount",
-      desc: "DON'T COMPROMISE ON Vegetables! GET Fresh PRODUCTS.",
+      desc: "DON'T COMPROMISE ON VEGETABLES! GET FRESH PRODUCTS.",
       bg: "fbf0f4",
       linkil:"/products/Vegetable"
     },
@@ -11,7 +11,7 @@ export const sliderItems = [
       id: 2,
       img: "https://wallpaperaccess.com/full/1101734.jpg",
       title: "Autumn Fruits Discount",
-      desc: "DON'T COMPROMISE ON Fresh Fruits! GET FLAT 30% OFF for above ₹1000.",
+      desc: "DON'T COMPROMISE ON FRESH FRUITS! GET FLAT 30% OFF FOR ABOVE ₹1000.",
       bg: "fcf1ed",
       linkil:"/products/Fruit"
     },
@@ -19,7 +19,7 @@ export const sliderItems = [
       id: 3,
       img: "https://domf5oio6qrcr.cloudfront.net/medialibrary/9685/iStock-544807136.jpg",
       title: "Dairy Products Discount",
-      desc: "DON'T COMPROMISE ON Milk Products! Hurry Up and GET FLAT 30% OFF.",
+      desc: "DON'T COMPROMISE ON Milk PRODUCTS! HURRY UP AND GET FLAT 30% OFF.",
       bg: "f5fafd",
       linkil:"/products/Dairy"    
     },

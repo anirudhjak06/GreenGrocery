@@ -1,0 +1,135 @@
+.privacy-page-top {
+    color: #888888;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.5em;
+    margin-top: 5%;
+    font-weight: bold;
+    margin-left: 12%;
+}
+
+.privacy-page-body {
+    display: inline-block;
+    margin-left: 12%;
+    margin-right: 5%;
+}
+
+.privacy-page-title {
+    font-family: "Roboto", sans-serif;
+    color: #2781bc;
+    font-size: 4.5em;
+    margin-bottom: 2%;
+    font-weight: lighter;
+    display: inline-block;
+    width: 70%;
+}
+
+.privacy-paragraph-heading {
+    font-family: "Abhaya Libre", sans-serif;
+    color: black;
+    font-weight: bolder;
+    font-size: 1.5em;
+    margin-bottom: 3%;
+}
+
+.privacy-content {
+    font-family: 'Abhaya Libre', sans-serif;
+    margin-bottom: 8%;
+    display: inline-block;
+    width: 70%;
+}
+
+.privacy-paragraph-body {
+    margin-right: 4%;
+    margin-bottom: 4em;
+}
+
+.privacy-paragraph-text-followed {
+    margin-bottom: 1em;
+    color: #717171;
+}
+
+.privacy-paragraph-text {
+    color: #717171;
+}
+
+.privacy-paragraph-body {
+    line-height: 2em;
+    font-family: 'Cabin', sans-serif;
+}
+
+.privacy-policy-nav-menu {
+    width: 27%;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.privacy-nav-menu-wrapper {
+    background-color: #f39c12;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.privacy-nav-menu-wrapper a {
+    display: block;
+    height: inherit;
+    width: inherit;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.privacy-nav-menu2,
+.privacy-nav-menu1 {
+    display: block;
+    color: #f39c12;
+    background-color: white;
+}
+
+.site-map-link:hover,
+.privacy-policy-link,
+.privacy-policy-link:hover {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+.privacy-nav-menu2 {
+    background-color: #f39c12;
+    border-bottom-width: 2px;
+    border-bottom-style: groove;
+    border-bottom-color: #f6f6f6;
+}
+
+.site-map-link {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* .privacy-nav-menu2:hover {
+    background-color: #f39c12;
+} */
+
+@media (max-width: 481px) {
+    .privacy-page-body,
+    .privacy-page-top,
+    .privacy-page-title,
+    .privacy-content {
+        width: 90%;
+        margin-right: 0;
+        text-align: left;
+    }
+    .privacy-policy-nav-menu {
+        width: 80%;
+        margin-bottom: 3.5em;
+    }
+    .privacy-page-top {
+        padding-bottom: 15px;
+    }
+    .privacy-page-title {
+        font-size: 3em;
+        line-height: 1em;
+    }
+}
