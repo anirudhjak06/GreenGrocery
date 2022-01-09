@@ -1,0 +1,16 @@
+  824  cd ..
+  825  cd admin
+  826  yarn add @reduxjs/toolkit react-redux
+  827  yarn add axios
+  828  yarn add redux-persist
+  829  yarn start
+  830  yarn add firebase
+  831  yarn start
+  832  yarn
+  833  yarn start
+  834  cd youtube-node-shop-api
+  835  yarn
+  836  yarn start
+  837  history >> a.txt
+  838  ls
+  839  cd admin
