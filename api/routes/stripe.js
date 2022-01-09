@@ -9,7 +9,7 @@ router.post("/payment", (req, res) => {
     {
       source: req.body.tokenId,
       amount: req.body.amount,
-      currency: "usd",
+      currency: "inr",
     },
     (stripeErr, stripeRes) => {
       if (stripeErr) {

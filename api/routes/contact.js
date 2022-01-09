@@ -46,17 +46,16 @@ router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
 });
 
 //GET USER ORDERS
-// router.get("/find/:userId", verifyTokenAndAuthorization, async (req, res) => {
-//   try {
-//     const orders = await Contact.find({ userId: req.params.userId });
-//     res.status(200).json(orders);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.get("/find/:id", async (req, res) => {
+  try {
+    const contct = await Contact.findById(req.params.id);
+    res.status(200).json(contct);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// //GET ALL
-
+//GET ALL
 router.get("/", async (req, res) => {
   try {
     const orders = await Contact.find();

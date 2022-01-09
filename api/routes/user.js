@@ -8,15 +8,19 @@ const {
 const router = require("express").Router();
 
 //UPDATE
-router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
-  if (req.body.password) {
-    req.body.password = CryptoJS.AES.encrypt(
-      req.body.password,
-      process.env.PASS_SEC
-    ).toString();
-  }
-
+router.put("/:id", verifyToken, async (req, res) => {
+  
+  // console.log(req);
   try {
+    if (req.body.password) {
+      console.log(req.body.password);
+      req.body.password = CryptoJS.AES.encrypt(
+        req.body.password,
+        process.env.PASS_SEC
+      ).toString();
+    }
+    console.log(req.body.password);
+
     const updatedUser = await User.findByIdAndUpdate(
       req.params.id,
       {
@@ -26,6 +30,7 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
     );
     res.status(200).json(updatedUser);
   } catch (err) {
+    console.log("Not authenticated");
     res.status(500).json(err);
   }
 });
@@ -60,6 +65,7 @@ router.get("/", verifyTokenAndAdmin, async (req, res) => {
       : await User.find();
     res.status(200).json(users);
   } catch (err) {
+    console.log("hello");
     res.status(500).json(err);
   }
 });

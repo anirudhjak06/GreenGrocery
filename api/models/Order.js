@@ -15,10 +15,12 @@ const OrderSchema = new mongoose.Schema(
       },
     ],
     amount: { type: Number, required: true },
-    address: { type: Object, required: true },
+    address: { type: Object },
     status: { type: String, default: "pending" },
   },
   { timestamps: true }
 );
 
 module.exports = mongoose.model("Order", OrderSchema);
+
+// npx browserslist@latest --update-db
