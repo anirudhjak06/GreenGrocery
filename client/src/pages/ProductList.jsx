@@ -85,7 +85,7 @@ const ProductList = () => {
         </Filter>
       </FilterContainer>
       <Products cat={cat} filters={filters} sort={sort} />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </Container>
   );

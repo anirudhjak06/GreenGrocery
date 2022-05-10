@@ -66,7 +66,7 @@ const Privacy = () => {
       
     </body>
         
-        <Newsletter/>
+        {/* <Newsletter/> */}
         <Footer/>
       </div>
     

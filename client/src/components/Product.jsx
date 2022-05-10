@@ -5,6 +5,13 @@ import {
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { publicRequest } from "../requestMethods";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
+import { Typography } from "@material-ui/core";
+
 
 const Info = styled.div`
   opacity: 0;
@@ -29,7 +36,7 @@ const Container = styled.div`
   margin: 5px;
   min-width: 280px;
   // background-color: #c73434
-  height: 350px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,25 +78,53 @@ const Icon = styled.div`
     transform: scale(1.1);
   }
 `;
+const Button = styled.button`
+  padding: 15px;
+  border: 2px solid teal;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    background-color: #f8f4f4;
+  }
+`;
 
 const Product = ({ item }) => {
+
+  const { color, size } = item;
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
+
+
+
+  const handleClick = (e) => {
+    console.log(color, size);
+
+    dispatch(
+      addProduct({ ...item, quantity, color, size })
+    );
+  };
   return (
     <Container>
       <Circle />
       <Image src={item.img} />
-      <Info>
+      {item.stock === 0 && <Info><Typography variant="subtitle1" style={{ color: 'white' }}>Out Of Stock</Typography></Info>}
+      {item.stock !== 0 && <Info>
         <Icon>
-          <ShoppingCartOutlined />
+          <ShoppingCartOutlined onClick={handleClick} />
         </Icon>
         <Icon>
           <Link to={`/product/${item._id}`}>
-          <SearchOutlined />
+            <SearchOutlined />
           </Link>
         </Icon>
         <Icon>
           <FavoriteBorderOutlined />
+          {/* <Button onClick={handleClick}>ADD TO CART</Button> */}
         </Icon>
-      </Info>
+      </Info>}
     </Container>
   );
 };

@@ -43,7 +43,7 @@ const Faq = () => {
 </div>
 
 </body1>
-        <Newsletter/>
+        {/* <Newsletter/> */}
         <Footer/>
       </div>
     

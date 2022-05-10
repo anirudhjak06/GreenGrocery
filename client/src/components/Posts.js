@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Product from "./Product";
 import axios from "axios";
+import { Typography } from "@material-ui/core"
 
 const Container = styled.div`
   padding: 20px;
@@ -26,8 +27,10 @@ const Posts = ({ posts, loading }) => {
     // </ul>
     <Container>
       {posts
-            .slice(0)
-            .map((item) => <Product item={item} key={item.id} />)}
+        .slice(0)
+        .map((item) => {
+          return <Product item={item} key={item.id} />
+        })}
     </Container>
 
   );

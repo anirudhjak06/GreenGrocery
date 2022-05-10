@@ -1,20 +1,22 @@
-// import { Add, Remove } from "@material-ui/icons";
+import { Add, Remove } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-// import { mobile } from "../responsive";
+import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
-import { publicRequest,userRequest } from "../requestMethods";
+import { publicRequest, userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../redux/apiCalls";
+import { addProduct, delCart } from "../redux/cartRedux";
 
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { current } from "@reduxjs/toolkit";
+import { Typography } from "@material-ui/core";
 
 // import { useLocation } from "react-router-dom";
 // // import { useEffect, useState } from "react";
@@ -44,13 +46,13 @@ const Top = styled.div`
 `;
 
 const TopButton = styled.button`
-padding: 10px;
-font-weight: 600;
-cursor: pointer;
-border: ${(props) => props.type === "filled" && "none"};
-background-color: ${(props) =>
-  props.type === "filled" ? "black" : "transparent"};
-color: ${(props) => props.type === "filled" && "white"};
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: ${(props) => props.type === "filled" && "none"};
+  background-color: ${(props) =>
+    props.type === "filled" ? "black" : "transparent"};
+  color: ${(props) => props.type === "filled" && "white"};
 `;
 
 // const TopTexts = styled.div`
@@ -167,6 +169,33 @@ const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
+const AddContainer = styled.div`
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  ${mobile({ width: "100%" })}
+  cursor: pointer;
+`;
+
+const AmountContainer = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+`;
+
+const Amount = styled.span`
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 5px;
+`;
+
+
 const Button = styled.button`
   width: 100%;
   padding: 10px;
@@ -185,28 +214,42 @@ const Cart = () => {
   // const id = location.pathname.split("/")[2];
   const currentUser = useSelector((state) => state.user.currentUser);
   const [orderId, setOrderId] = useState(null);
+  const [quantity, setQuantity] = useState(1);
 
-  
-  
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
 
   const onToken = (token) => {
     setStripeToken(token);
   };
 
+  const delClick = () => {
+    dispatch(
+      delCart()
+    );
+  };
+
   useEffect(() => {
-    
+
     const makeRequest2 = async () => {
       try {
         const res2 = await userRequest.post("/orders", {
           products: cart.products,
           userId: currentUser._id,
           // tokenId: stripeToken.id,
-          address: stripeToken.card.address_line1+ " " + stripeToken.card.address_city + " " + stripeToken.card.address_zip,
-          amount: (cart.total+25),
+          address: stripeToken.card.address_line1 + " " + stripeToken.card.address_city + " " + stripeToken.card.address_zip,
+          amount: (cart.total + 25),
         });
+        console.log(res2)
         history.push("/success/" + res2.data._id, {
           stripeData: res2.data,
-          products: cart, });
+          products: cart,
+        });
         setOrderId(res2);
         console.log(res2.data._id);
         console.log(stripeToken.card);
@@ -215,31 +258,32 @@ const Cart = () => {
         console.log("error here");
       }
       try {
-        const res = await userRequest.post("http://localhost:5000/api/checkout/payment", {
+        const res = await userRequest.post("/api/checkout/payment", {
           tokenId: stripeToken.id,
-          amount: (cart.total+25) * 100,
+          amount: (cart.total + 25) * 100,
         });
       } catch {
         console.log("error here 2");
       }
       clearCart(dispatch);
     };
-    
-    // const makeRequest = async () => {
-      
-    // };
-    const dCart = async () => {
-      // const res = await makeRequest2();
-      // const res2 = await makeRequest();
 
-      
-    };
-    stripeToken && makeRequest2(); 
+    // const makeRequest = async () => {
+
+    // };
+    // const dCart = async () => {
+    //   // const res = await makeRequest2();
+    //   // const res2 = await makeRequest();
+    //   clearCart(dispatch);
+
+    // };
+    stripeToken && makeRequest2();
     // makeRequest();
     console.log(cart);
     // dCart();
     // currentUser.cart.quantity = 0;
   }, [cart, stripeToken, cart.total, history]);
+  const [stockError, setStockError] = useState(false)
   return (
     <Container>
       <Navbar />
@@ -248,8 +292,12 @@ const Cart = () => {
         <Title>YOUR BAG</Title>
         <Top>
           <Link to="/">
-          <TopButton type="filled">CONTINUE SHOPPING</TopButton>
+            <TopButton type="filled">CONTINUE SHOPPING</TopButton>
+            {/* <Button >Del TO CART</Button> */}
           </Link>
+          <TopButton type="filled" onClick={delClick}>Delete Cart</TopButton>
+
+          {/* <Button onClick={dCart}>CHECKOUT NOW</Button> */}
           {/* <TopTexts>
             <TopText>Shopping Bag(0)</TopText>
             <TopText>Your Wishlist (0)</TopText>
@@ -258,8 +306,13 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            {cart.products.map((product) => (
-              <Product key={product}>
+            {(stockError !== "") && <Typography color="error" variant="h5">
+              {stockError}
+            </Typography>}
+            {cart.products.map((product, index) => {
+              const stock = product.stock || 10
+              console.log(stock, product.quantity)
+              return <Product key={index}>
                 <ProductDetail>
                   <Image src={product.img} />
                   <Details>
@@ -281,12 +334,44 @@ const Cart = () => {
                     <ProductAmount>Quantity: {product.quantity}</ProductAmount>
                     {/* <Remove /> */}
                   </ProductAmountContainer>
+                  <AddContainer>
+                    <AmountContainer>
+                      <Remove onClick={() => {
+                        const quantity = product.quantity
+                        const color = product.color
+                        const size = product.size
+                        if (stock >= product.quantity) {
+                          setStockError("")
+                        } else {
+                          setStockError("")
+                        }
+                        dispatch(
+                          addProduct({ ...product, quantity: -1, color, size })
+                        );
+                      }} />
+                      <Amount>{product.quantity}</Amount>
+                      <Add onClick={() => {
+                        const quantity = product.quantity
+                        const color = product.color
+                        const size = product.size
+                        if (stock <= product.quantity) {
+                          setStockError(`${product.title} are Out of Stock`)
+                          return
+                        } else {
+                          setStockError("")
+                        }
+                        dispatch(
+                          addProduct({ ...product, quantity: 1, color, size })
+                        );
+                      }} />
+                    </AmountContainer>
+                  </AddContainer>
                   <ProductPrice>
-                     ₹ {product.price * product.quantity}
+                    ₹ {product.price * product.quantity}
                   </ProductPrice>
                 </PriceDetail>
               </Product>
-            ))}
+            })}
             <Hr />
           </Info>
           <Summary>
@@ -312,8 +397,8 @@ const Cart = () => {
               image="../favicon.ico"
               billingAddress
               shippingAddress
-              description={"Your total is  ₹" + (cart.total+25)}
-              amount={(cart.total + 25)*100}
+              description={"Your total is  ₹" + (cart.total + 25)}
+              amount={(cart.total + 25) * 100}
               token={onToken}
               stripeKey={KEY}
             >

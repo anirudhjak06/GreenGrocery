@@ -4,6 +4,7 @@ import { login } from "../redux/apiCalls";
 import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+// import { useAlert } from 'react-alert'
 
 const Container = styled.div`
   width: 100vw;
@@ -108,6 +109,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
+  // const alert = useAlert();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -130,7 +132,10 @@ const Login = () => {
           <Button onClick={handleClick} disabled={isFetching}>
             LOGIN
           </Button>
-          {error && <Error>Something went wrong...</Error>}
+          {/* {error && <Error>Something went wrong...</Error>} */}
+          {/* if ({error})
+            alert.show('Oh look, an alert!'); */}
+
           <Lik>DO NOT YOU REMEMBER THE PASSWORD?</Lik>
           <Button2><Link to="/register" style={{ textDecoration: 'none', color: 'white' }}>CREATE A NEW ACCOUNT</Link></Button2>
         </Form>

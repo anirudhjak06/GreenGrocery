@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Newsletter from "../components/Newsletter";
+// import Newsletter from "../components/Newsletter";
 // import styled from "styled-components";
 import "./contact.css";
 
@@ -19,7 +19,7 @@ const Contact = () => {
       email: email.value,
       desc: desc.value,
     };
-    let response = await fetch("http://localhost:5000/api/contact/", {
+    let response = await fetch("/api/contact/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -65,7 +65,7 @@ const Contact = () => {
   </div>
 </body1>
     
-    <Newsletter/>
+    {/* <Newsletter/> */}
     <Footer/>
   </div>
 

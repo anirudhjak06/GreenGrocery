@@ -10,10 +10,9 @@ const Container = styled.div`
   justify-content: space-between;
   // background-color: #d9fcf6;
   // border-radius: 0.5%;
-
 `;
 
-const Products = ({ cat, filters, sort }) => {
+const Products2 = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -61,15 +60,12 @@ const Products = ({ cat, filters, sort }) => {
   return (
     <Container>
       {cat
-        ? filteredProducts?.map((item) =>{ 
-           
-          return <Product item={item} key={item._id} />
-          })
+        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
         : products
-            .slice(0)
-            .map((item) => <Product item={item} key={item._id} />)}
+            .slice(0,12)
+            .map((item) => <Product item={item} key={item.id} />)}
     </Container>
   );
 };
 
-export default Products;
+export default Products2;

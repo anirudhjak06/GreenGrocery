@@ -4,13 +4,18 @@ import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import  { useState } from "react"
+import { Link, useHistory } from "react-router-dom";
 import { lgout } from "../redux/apiCalls";
 import { useDispatch } from "react-redux";
-
-
+import {
+  Search,
+  BookmarksOutlined
+} from "@material-ui/icons"
 const Container = styled.div`
   height: 60px;
+  background-color: #34eb77;
+
   ${mobile({ height: "50px" })}
 `;
 
@@ -21,6 +26,14 @@ const Wrapper = styled.div`
   justify-content: space-between;
   ${mobile({ padding: "10px 0px" })}
 `;
+
+const SearchContainer = styled.div`
+  border: 0.5px green;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
+`
 
 const Left = styled.div`
   flex: 1;
@@ -67,6 +80,13 @@ const Right = styled.div`
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
+const Input = styled.input`
+  margin-left: 25px;
+  padding: 5px;
+  border: none;
+  ${mobile({ width: "50px" })}
+`
+
 const MenuItem = styled.div`
   text-decoration: underline;
   font-size: 17px;
@@ -77,13 +97,20 @@ const MenuItem = styled.div`
 
 
 const Navbar = () => {
+  const [search, setSearch] = useState("")
   const quantity = useSelector(state=>state.cart.quantity);
   const user = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
-  
+  const history = useHistory()
   const handleClick = () => {
     lgout(dispatch);
   };
+
+    //handling submit
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      history.push(`/products/${search}`)
+    }
   
   if (!user){ 
     return (
@@ -96,6 +123,16 @@ const Navbar = () => {
               <Input placeholder="Search" />
               <Search style={{ color: "gray", fontSize: 16 }} />
             </SearchContainer> */}
+            {/* Test */}
+            <form onSubmit={handleSubmit}>
+            <SearchContainer>
+              <Input
+                placeholder="Search Products"
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <Search style={{ color: "black", fontSize: 25}} />
+            </SearchContainer>
+          </form>
           </Left>
           <Center>
             <Logo><Link to={`/`} style={{ textDecoration: 'none', color: 'black' }}>Green Grocery</Link></Logo>
@@ -132,6 +169,16 @@ const Navbar = () => {
               <Input placeholder="Search" />
               <Search style={{ color: "gray", fontSize: 16 }} />
             </SearchContainer> */}
+             <form onSubmit={handleSubmit}>
+            <SearchContainer>
+              <Input
+                placeholder="Search Products"
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <Search style={{ color: "gray", fontSize: 16 }} />
+            </SearchContainer>
+          </form>
+            
           </Left>
           <Center>
             <Logo><Link to={`/`} style={{ textDecoration: 'none', color: 'black' }}>Green Grocery</Link></Logo>
