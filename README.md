@@ -72,9 +72,9 @@ in all the terminals: ```yarn start```
 
 ★ Then, the terminal will prompt to open different URL's or else
 enter the following URL's in your broweser for differenet pages.
-- Enter http://localhost:3000/ for the frontend page (Client). (https://greengrocery30.herokuapp.com/).
-- Enter http://localhost:3001/ for the [Admin](https://greengrocery30-admin.herokuapp.com/) Page.
-- Enter http://localhost:3002/ for the [Volunteer] Page.(https://greengrocery30-volunteer.herokuapp.com/).
+- Enter http://localhost:3000/ for the [Client] page (https://greengrocery30.herokuapp.com/).
+- Enter http://localhost:3001/ for the [Admin] page (https://greengrocery30-admin.herokuapp.com/).
+- Enter http://localhost:3002/ for the [Volunteer] page (https://greengrocery30-volunteer.herokuapp.com/).
 
 The API will run in the http://localhost:5000/ for the backend part and connceting to the MongoDB database.
 
