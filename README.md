@@ -1,6 +1,8 @@
 # Green-Grocery
 ## A Full Stack Development Project using MERN Stack.
 
+### Deployment Link: http://greengrocery30.herokuapp.com/
+
 ## Problem Motivation
 - In these present situations, it is difficult for farmers to sell their products at a fair price in markets. Customers are buying hybrid fruits and vegetables which are not good for health which contain harmful substances.
 - Customers are buying products at a higher price than the market price.
@@ -70,9 +72,9 @@ in all the terminals: ```yarn start```
 
 ★ Then, the terminal will prompt to open different URL's or else
 enter the following URL's in your broweser for differenet pages.
-- Enter http://localhost:3000/ for the frontend page (Client).
-- Enter http://localhost:3001/ for the Admin Page.
-- Enter http://localhost:3002/ for the Volunteer Page.
+- Enter http://localhost:3000/ for the frontend page (Client). (https://greengrocery30.herokuapp.com/).
+- Enter http://localhost:3001/ for the [Admin](https://greengrocery30-admin.herokuapp.com/) Page.
+- Enter http://localhost:3002/ for the [Volunteer] Page.(https://greengrocery30-volunteer.herokuapp.com/).
 
 The API will run in the http://localhost:5000/ for the backend part and connceting to the MongoDB database.
 
@@ -80,8 +82,8 @@ The API will run in the http://localhost:5000/ for the backend part and connceti
 
 #### NOTE: The presentation and website demo of our project is available here.
 
-## Phase 1 Youtube link: https://youtu.be/1cBzuk6oSCI
-## Phase 2 Youtube link: https://www.youtube.com/watch?v=CiZMixbMb3k
+### Phase 1 Youtube link: https://youtu.be/1cBzuk6oSCI
+### Phase 2 Youtube link: https://www.youtube.com/watch?v=CiZMixbMb3k
 
 
 ## Group Members
