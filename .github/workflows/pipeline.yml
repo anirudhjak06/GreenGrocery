@@ -1,0 +1,46 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+jobs:
+  deployment_pipeline:
+    runs-on: ubuntu-18.04
+    env:
+      MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      TEST_MONGODB_URI: ${{secrets.TEST_MONGODB_URI}}
+      PASS_SEC: ${{secrets.PASS_SEC}}
+      JWT_SEC: ${{secrets.JWT_SEC}}
+      STRIPE_KEY: ${{secrets.STRIPT_KEY}}
+      REACT_APP_STRIPE: ${{secrets.REACT_APP_STRIPE}}
+      SKIP_PREFLIGHT_CHECK: ${{secrets.SKIP_PREFLIGHT_CHECK}}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: npm install api
+        run: npm install
+      - name: npm install client
+        run: cd client && npm install
+      - name: build
+        run: npm run build:client
+      - name: test
+        run: npm run test
+      - name: deploy to heroku
+        if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
+        uses: akhileshns/heroku-deploy@v3.8.8
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "greengroceryci-30"
+          heroku_email: "wadproj30@gmail.com"
+        env:
+          HD_MONGO_URI: ${{ secrets.MONGODB_URI }}
+          HD_SECRET: ${{secrets.PASS_SEC}}
+          HD_SKIP_PREFLIGHT_CHECK: true
+      - uses: actions/checkout@v2
