@@ -55,6 +55,9 @@ https://nodejs.org/en/.
   - PASS_SEC = This is used for encrypting the password and can be named anything. 
   - JWT_SEC = This will be used for initialization of JWT Token and can be named anything as per convenience.
   - STRIPE_KEY= Here, the url of the stripe key must be provided.
+  - CLOUD_NAME = This is the cloud name used for cloudinary.
+  - CLOUDINARY_API_KEY = This is the api key used for cloudinary.
+  - CLOUDINARY_API_SECRET = This is the api secret key of cloudinary account 
 
 ★ Now, we have to install several dependencies.
 
@@ -75,7 +78,10 @@ The API will run in the http://localhost:5000/ for the backend part and connceti
 
 ★ After performing all the steps in correct order, the web application will start running smoothly. 
 
-#### NOTE: The presentation and website demo of our project is available at this youtube link: https://youtu.be/1cBzuk6oSCI
+#### NOTE: The presentation and website demo of our project is available here.
+Phase 1 Youtube link: https://youtu.be/1cBzuk6oSCI
+Phase 2 Youtube link: https://www.youtube.com/watch?v=CiZMixbMb3k
+
 
 ## Group Members
 
