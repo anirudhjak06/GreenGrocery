@@ -43,9 +43,9 @@ export default function User() {
       <div></div>
       <div className="userTitleContainer">
         <h1 className="userTitle">Edit User</h1>
-        <Link to="/newUser">
+        {/* <Link to="/newUser">
           <button className="userAddButton">Create</button>
-        </Link>
+        </Link> */}
       </div>
       <div className="userContainer">
         <div className="userShow">
