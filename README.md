@@ -87,6 +87,7 @@ The API will run in the http://localhost:5000/ for the backend part and connceti
 <hr>
 
 ### Phase 2 Youtube link: https://youtu.be/CiZMixbMb3k
+<hr>
 
 ## Group Members
 
