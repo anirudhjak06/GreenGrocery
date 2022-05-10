@@ -1,4 +1,5 @@
 const Order = require("../models/Order");
+const Product = require("../models/Product")
 const {
   verifyToken,
   verifyTokenAndAuthorization,
@@ -10,10 +11,24 @@ const router = require("express").Router();
 //CREATE
 
 router.post("/", verifyToken, async (req, res) => {
+  console.log("I hit this")
   const newOrder = new Order(req.body);
-
+  const products = newOrder.products
+  console.log(products)
   try {
     const savedOrder = await newOrder.save();
+    for(let i in products) {
+      console.log(products)
+      console.log(products[i]._id)
+      const product = await Product.updateOne(
+        {_id: products[i]._id}, {
+          $inc: {
+             stock: 0 - products[i].quantity
+          }
+        }
+      )
+      console.log(product)
+    }
     res.status(200).json(savedOrder);
   } catch (err) {
     res.status(500).json(err);

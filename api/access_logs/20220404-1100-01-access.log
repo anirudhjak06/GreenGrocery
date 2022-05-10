@@ -1,0 +1,96 @@
+GET /api/users/find/61924f3864a836a2be1bafe3 403 21 - 8.575 ms
+GET /api/products 304 - - 486.545 ms
+GET /api/products/find/undefined 500 246 - 4.861 ms
+GET /api/products/find/undefined 500 246 - 1.405 ms
+GET /api/products/find/undefined 500 246 - 1.559 ms
+GET /api/products/find/undefined 500 246 - 1.193 ms
+GET /api/products/find/undefined 500 246 - 1.139 ms
+GET /api/products/find/undefined 500 246 - 1.235 ms
+GET /api/products/find/undefined 500 246 - 1.169 ms
+GET /api/products/find/undefined 500 246 - 1.273 ms
+GET /api/products?category=Fruit 304 - - 242.618 ms
+GET /api/products/find/Fruit 500 234 - 3.521 ms
+GET /api/products/find/Fruit 500 234 - 3.357 ms
+GET /api/products/find/Fruit 500 234 - 2.284 ms
+GET /api/products/find/Fruit 500 234 - 2.570 ms
+GET /api/products/find/Fruit 500 234 - 6.228 ms
+GET /api/products/find/Fruit 500 234 - 2.732 ms
+GET /api/products/find/Fruit 500 234 - 2.367 ms
+GET /api/products/find/Fruit 500 234 - 2.846 ms
+GET /api/products/find/Fruit 500 234 - 2.822 ms
+GET /api/products/find/Fruit 500 234 - 3.385 ms
+GET /api/products 304 - - 653.961 ms
+GET /api/products/find/undefined 500 246 - 4.835 ms
+GET /api/products/find/undefined 500 246 - 3.162 ms
+GET /api/products/find/undefined 500 246 - 3.010 ms
+GET /api/products/find/undefined 500 246 - 3.220 ms
+GET /api/products/find/undefined 500 246 - 3.873 ms
+GET /api/products/find/undefined 500 246 - 3.488 ms
+GET /api/products/find/undefined 500 246 - 3.825 ms
+GET /api/products/find/undefined 500 246 - 5.937 ms
+GET /api/products?category=Dairy 304 - - 221.848 ms
+GET /api/products/find/Dairy 500 234 - 1.162 ms
+GET /api/products/find/Dairy 500 234 - 1.271 ms
+GET /api/products/find/Dairy 500 234 - 1.198 ms
+GET /api/products/find/Dairy 500 234 - 0.949 ms
+GET /api/products/find/Dairy 500 234 - 0.956 ms
+GET /api/products/find/Dairy 500 234 - 0.947 ms
+GET /api/products/find/61b39e071bd6a40ad5397eae 200 522 - 240.610 ms
+::1 - - [04/Apr/2022:04:45:13 +0000] "GET /api/users HTTP/1.1" 403 21 "http://localhost:5000/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:46:22 +0000] "GET /api/users/find/61924f3864a836a2be1bafe3 HTTP/1.1" 403 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:46:32 +0000] "GET /api/users HTTP/1.1" 403 21 "http://localhost:5000/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:46:59 +0000] "POST /api/auth/login HTTP/1.1" 500 20 "-" "PostmanRuntime/7.29.0"
+::1 - - [04/Apr/2022:04:47:18 +0000] "POST /api/auth/login HTTP/1.1" 200 516 "-" "PostmanRuntime/7.29.0"
+::1 - - [04/Apr/2022:04:48:10 +0000] "GET /api/users HTTP/1.1" 200 9829 "http://localhost:5000/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:48:29 +0000] "GET /api/users/find/61b1d5d3d8da3f7b362b3aed HTTP/1.1" 200 203 "http://localhost:5000/api-docs/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:50:49 +0000] "GET /api/products HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:50:49 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:50:49 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:50:49 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:50:49 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:50:49 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:50:49 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:50:49 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:50:49 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:07 +0000] "GET /api/products HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:07 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:07 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:07 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:07 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:07 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:07 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:07 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:07 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:12 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:22 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:26 +0000] "GET /api/products?category=Dairy HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:26 +0000] "GET /api/products/find/Dairy HTTP/1.1" 500 234 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:26 +0000] "GET /api/products/find/Dairy HTTP/1.1" 500 234 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:26 +0000] "GET /api/products/find/Dairy HTTP/1.1" 500 234 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:26 +0000] "GET /api/products/find/Dairy HTTP/1.1" 500 234 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:26 +0000] "GET /api/products/find/Dairy HTTP/1.1" 500 234 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:26 +0000] "GET /api/products/find/Dairy HTTP/1.1" 500 234 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"
+::1 - - [04/Apr/2022:04:52:35 +0000] "GET /api/products/find/undefined HTTP/1.1" 500 246 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36"

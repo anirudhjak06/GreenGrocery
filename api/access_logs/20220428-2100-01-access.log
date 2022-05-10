@@ -1,0 +1,2 @@
+::ffff:127.0.0.1 - - [28/Apr/2022:15:28:47 +0000] "POST /api/auth/login HTTP/1.1" 500 555 "http://localhost:3000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"
+::ffff:127.0.0.1 - - [28/Apr/2022:15:29:26 +0000] "POST /api/auth/login HTTP/1.1" 500 555 "http://localhost:3000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"

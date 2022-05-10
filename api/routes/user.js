@@ -30,6 +30,7 @@ router.put("/:id", verifyToken, async (req, res) => {
     );
     res.status(200).json(updatedUser);
   } catch (err) {
+
     console.log("Not authenticated");
     res.status(500).json(err);
   }

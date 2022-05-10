@@ -1,7 +1,13 @@
+// import { useAlert } from 'react-alert'
+
+
 const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
+// const fetch = require('node-fetch');
+// const redis = require('redis');
+
 
 //REGISTER
 router.post("/register", async (req, res) => {
@@ -25,6 +31,7 @@ router.post("/register", async (req, res) => {
 //LOGIN
 
 router.post("/login", async (req, res) => {
+  // const alert = useAlert()
   try {
     const user = await User.findOne({ username: req.body.username });
     !user && res.status(401).json("Wrong credentials!");
@@ -44,13 +51,16 @@ router.post("/login", async (req, res) => {
         isAdmin: user.isAdmin,
       },
       process.env.JWT_SEC,
-      {expiresIn:"3d"}
+      {expiresIn:"30d"}
     );
 
     const { password, ...others } = user._doc;
-
+      console.log("Logged in succeefully");
     res.status(200).json({...others, accessToken});
   } catch (err) {
+
+    // alert.show("Wrong Credentials");
+
     res.status(500).json(err);
   }
 });
