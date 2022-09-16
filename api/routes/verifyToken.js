@@ -6,9 +6,9 @@ const verifyToken = (req, res, next) => {
 
   if (authHeader) {
     // const token = authHeader.split(" ")[1];
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI0ZjM4NjRhODM2YTJiZTFiYWZlMyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0OTA0NzYzOCwiZXhwIjoxNjUxNjM5NjM4fQ.lCR2oJYR11OLrOHyEN4dSbEmfXE8b-0kCRyCyFQBvqw"
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI0ZjM4NjRhODM2YTJiZTFiYWZlMyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MTE5MDExNCwiZXhwIjoxNjg3MTEwMTE0fQ.ABHHOai5tWVIgVnEgW0bwUAlBhlS9b_M-JIDK8HMSGs"
     jwt.verify(token, process.env.JWT_SEC, (err, user) => {
-      if (err) res.status(403).json("Token is not valid!");
+      if (err) res.status(403).json({error: err});
       req.user = user;
       next();
     });
@@ -29,6 +29,7 @@ const verifyTokenAndAuthorization = (req, res, next) => {
 
 const verifyTokenAndAdmin = (req, res, next) => {
   verifyToken(req, res, () => {
+    console.log(req.user.isAdmin);
     if (req.user.isAdmin) {
       next();
     } else {

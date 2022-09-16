@@ -34,7 +34,9 @@ router.post("/login", async (req, res) => {
   // const alert = useAlert()
   try {
     const user = await User.findOne({ username: req.body.username });
-    !user && res.status(401).json("Wrong credentials!");
+    if(!user) {
+      return res.status(401).json("Wrong credentials!");
+    }
 
     const hashedPassword = CryptoJS.AES.decrypt(
       user.password,
@@ -42,8 +44,9 @@ router.post("/login", async (req, res) => {
     );
     const OriginalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
 
-    OriginalPassword !== req.body.password &&
-      res.status(401).json("Wrong credentials!");
+    if(OriginalPassword !== req.body.password) {
+      return res.status(401).json("Wrong credentials!");
+    }
 
     const accessToken = jwt.sign(
       {
@@ -51,17 +54,17 @@ router.post("/login", async (req, res) => {
         isAdmin: user.isAdmin,
       },
       process.env.JWT_SEC,
-      {expiresIn:"30d"}
+      {expiresIn:"300d"}
     );
 
     const { password, ...others } = user._doc;
       console.log("Logged in succeefully");
-    res.status(200).json({...others, accessToken});
+    return res.status(200).json({...others, accessToken});
   } catch (err) {
 
     // alert.show("Wrong Credentials");
 
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 

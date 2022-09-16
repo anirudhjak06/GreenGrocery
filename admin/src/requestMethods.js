@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const BASE_URL = "https://greengrocery30.herokuapp.com/api/";
+const BASE_URL = "https://localhost:5000/api/";
 // const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
 // const currentUser = user && JSON.parse(user).currentUser;
 // const TOKEN = currentUser?.accessToken;
-const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI0ZjM4NjRhODM2YTJiZTFiYWZlMyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTcxODMyOCwiZXhwIjoxNjQxOTc3NTI4fQ.BHKvrS09UpdDaToxnbbJzQeat-vcSXC2LJcxD0aYo1k";
+const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTI0ZjM4NjRhODM2YTJiZTFiYWZlMyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MTE5MDExNCwiZXhwIjoxNjg3MTEwMTE0fQ.ABHHOai5tWVIgVnEgW0bwUAlBhlS9b_M-JIDK8HMSGs";
 
 // console.log(localStorage.getItem("persist:root"));
 

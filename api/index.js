@@ -72,6 +72,9 @@ app.use(express.static("build"))
 app.use(cors());
 app.use(morgan("combined", { stream: accessLogStream }));
 app.use(express.json());
+app.use("/home", (req, res) => {
+  res.json({message: "running"});
+})
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
